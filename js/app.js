@@ -30,8 +30,9 @@ const separateName = () => {
 
     let completeName = document.getElementById("name").value.toLowerCase();
     let nameSplit = completeName.split('');
+
     nameToNumber(nameSplit);
-    onlyVogals(nameSplit);
+    separateVogals(nameSplit);
 
 }
 
@@ -95,32 +96,31 @@ const miniNumber = (num) => {
             result.innerHTML = numberTotal;
 
         } else {
-            return "number not found";
+            return "not a number"
         }
-    
 }
 
-const onlyVogals = (arrayLetters) => {
+const separateVogals = (arrayLetters) => {
 
-    let removeAccents = arrayLetters.toString();
-    
+    let arrayVogals = [];
    
     for (let k = 0; k < arrayLetters.length; k++) {
 
         if (arrayLetters[k] == "a") {
-            console.log(arrayVogals.push(arrayLetters[k]));
+           arrayVogals.push(arrayLetters[k]);
         } else if (arrayLetters[k] == "e") {
-            console.log(arrayVogals.push(arrayLetters[k]));
+            arrayVogals.push(arrayLetters[k]);
         } else if (arrayLetters[k] == "i") {
-            console.log(arrayVogals.push(arrayLetters[k]));
+            arrayVogals.push(arrayLetters[k]);
         } else if (arrayLetters[k] == "o") {
-            console.log(arrayVogals.push(arrayLetters[k]));
+            arrayVogals.push(arrayLetters[k]);
         } else if (arrayLetters[k] == "u") {
-            console.log(arrayVogals.push(arrayLetters[k]));
+            arrayVogals.push(arrayLetters[k]);
         }
     }
 
-    console.log(arrayVogals, "AQUI array final de vogais")
+    console.log(arrayVogals, "AQUI array final de vogais");
     vogalsResult.innerHTML = arrayVogals;
-
+   
 }
+
