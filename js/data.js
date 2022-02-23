@@ -1,6 +1,3 @@
-const buttonCalculate = document.getElementById("button");
-
-
 // data
 const numerologyData = {
     1: {
@@ -58,61 +55,3 @@ const numerologyData = {
         isDeveloper: 'The mission for 9 is to reach its highest state of consciousness, and to help others also achieve this spiritual awareness. 9 is not afraid to transform, and its malleable spirit inspires others to explore their own ranges of motion. Since 9, in many ways, has transcended the physical plane, it must constantly remember to anchor itself.'
       }
   };
-
- 
-
-
-// button event
-buttonCalculate.onclick = function (e) {
-        e.preventDefault();
-        separateName();
-        console.log(separateName());
-}
-
-
-function compareLetters(name) {
-
-
-        // letter to number
-        const letterToNumbers = [
-            {a: 1, j: 1, s: 1},
-            {b: 2, k: 2, t: 2},
-            {c: 3, l: 3, u: 3},
-            {d: 4, m: 4, v: 4},
-            {e: 5, n: 5, w: 5},
-            {f: 6, o: 6, x: 6},
-            {g: 7, p: 7, y: 7},
-            {h: 8, q: 8, z: 8},
-            {i: 9, r: 9}
-        ];
-
-        [...letterToNumbers];
-
-/*         for(let i = 0; i < arguments.length; i++) {
-
-            if(name[i] == letterToNumbers.a) {
-                return 1;
-            }
-
-        } */
-
-
-
-    console.log(letterToNumbers);
-    
-    console.log(letterToNumbers.a, "xgsss")
-    return letterToNumbers.a;
-    
-
-}
-
-
-function separateName() {
-
-    let inputName = document.getElementById("input").value;
-    let nameSplit = [...inputName];
-    let compare = compareLetters(nameSplit);
-    return compare;
-}
-
-
