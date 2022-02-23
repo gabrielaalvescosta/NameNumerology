@@ -4,6 +4,7 @@ const result = document.getElementById("result");
 const vogalsResult = document.getElementById("vogals");
 const consResult = document.getElementById("cons");
 
+
 // objeto conversao de letras para numeros
 const lettersToNumbers = {
     a: 1, á: 1, ã: 1, â: 1, j: 1, s: 1,
@@ -57,7 +58,6 @@ const nameToNumber = (letters) => {
 }
 
 
-
 // calcula o numero da alma (soma todos os números do array)
 const sumNumber = (array) => {
 
@@ -73,7 +73,6 @@ const sumNumber = (array) => {
     miniNumber(almaNumberCont);
 
 }
-
 
 // transforma number em array e soma os os números até que tenha apenas 1 número inteiro
 const miniNumber = (num) => {
@@ -99,6 +98,8 @@ const miniNumber = (num) => {
             return "not a number"
         }
 }
+
+
 
 const separateVogals = (arrayLetters) => {
 
