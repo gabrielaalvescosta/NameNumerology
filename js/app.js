@@ -31,26 +31,37 @@ const separateName = () => {
 // transforma o nome em numero, remove espacos com join, chama as funcoes de soma
 const nameToNumber = (nameSplit) => {
  
-    let numbersResultArray = nameSplit.map( p => {
+    let numbersResultArray = nameSplit.map( n => {
 
-        if (p in lettersToNumbers) {
-            return lettersToNumbers[p];
+        if (n in lettersToNumbers) {
+            return lettersToNumbers[n];
         }
 
     }).sort((a, b) => a - b).join(''); 
     // join('') remove os espaços vazios
+
+
     result.innerHTML = numbersResultArray;
     let num = numbersResultArray.split('');
-    almaNumber(num)
+    almaNumber(num);
 }
 
-// calcula o numero da alma (soma todos os números)
-const almaNumber = (aaa) => {
-    console.log(aaa, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    const almaNumberCont = 0;
-    const almaNumberSoma = aaa.reduce((soma, i) => soma + i, almaNumberCont);
 
-    console.log(almaNumberSoma)
- 
+
+// calcula o numero da alma (soma todos os números)
+const almaNumber = (array) => {
+
+    let arrayAlma = array;
+    console.log(arrayAlma, "tamanho do array");
+    let almaNumberCont = 0;
+
+    for (let i = 0; i < arrayAlma.length; i++) {
+        
+        almaNumberCont = almaNumberCont + arrayAlma[i];
+        console.log(almaNumberCont = almaNumberCont + arrayAlma[i], "soma");
+    }
+
+    return almaNumberCont;
+
 }
 
