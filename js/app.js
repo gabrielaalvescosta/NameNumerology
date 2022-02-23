@@ -42,7 +42,8 @@ const nameToNumber = (nameSplit) => {
 
 
     result.innerHTML = numbersResultArray;
-    let num = numbersResultArray.split('');
+    let num = numbersResultArray.split('').map(Number);
+    console.log(num, "aaarray")
     almaNumber(num);
 }
 
@@ -51,17 +52,16 @@ const nameToNumber = (nameSplit) => {
 // calcula o numero da alma (soma todos os números)
 const almaNumber = (array) => {
 
-    let arrayAlma = array;
-    console.log(arrayAlma, "tamanho do array");
     let almaNumberCont = 0;
 
-    for (let i = 0; i < arrayAlma.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         
-        almaNumberCont = almaNumberCont + arrayAlma[i];
-        console.log(almaNumberCont = almaNumberCont + arrayAlma[i], "soma");
+        array[i];
+        console.log(almaNumberCont += array[i], "soma");
+
     }
 
-    return almaNumberCont;
+    console.log(almaNumberCont)
 
 }
 
