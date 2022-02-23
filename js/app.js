@@ -84,14 +84,15 @@ const miniNumber = (num) => {
         if (numberTotal.length >= 2) {
 
             console.log(numberTotal, "caiu no if");
-            miniNumber(numberTotal);
+            numberTotal = miniNumber(numberTotal);
     
         } else if (numberTotal.length == 1) {
+            
             console.log(numberTotal, "caiu no else");
-            return numberTotal;
+            result.innerHTML = numberTotal;
         }
     
-     }
+}
 
 
 
