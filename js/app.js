@@ -79,14 +79,14 @@ const miniNumber = (num) => {
     let numbersSumArray = numbersToString.split('').map(Number);
     let numberReduce = numbersSumArray.reduce((total, numero) => total + numero, 0);
 
-    let numberTotal = numberReduce;
-
+    let numberTotal = numberReduce.toString();
+    console.log(numberTotal.length, "comprimento do numero")
         if (numberTotal.length >= 2) {
 
             console.log(numberTotal, "caiu no if");
             miniNumber(numberTotal);
     
-        } else {
+        } else if (numberTotal.length == 1) {
             console.log(numberTotal, "caiu no else");
             return numberTotal;
         }
