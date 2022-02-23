@@ -49,19 +49,50 @@ const nameToNumber = (nameSplit) => {
 
 
 
-// calcula o numero da alma (soma todos os números)
+// calcula o numero da alma (soma todos os números do array)
 const almaNumber = (array) => {
 
     let almaNumberCont = 0;
 
     for (let i = 0; i < array.length; i++) {
         
-        array[i];
-        console.log(almaNumberCont += array[i], "soma");
-
+        almaNumberCont += array[i];
     }
-
-    console.log(almaNumberCont)
-
+    
+    console.log(almaNumberCont, "valor finalssss")
+    miniNumber(almaNumberCont);
 }
+
+// transforma number em string e transforma em um array de numeros
+
+const stringToNumber = (num) => {
+    
+    let numbersToString = num.toString();
+    let transformToArrayNumbers = numbersToString.split('').map(Number);
+    return transformToArrayNumbers;
+}
+
+// transforma number em array e soma os os números até que tenha um inteiro
+const miniNumber = (num) => {
+
+    let numbersToString = num.toString();
+    let numbersSumArray = numbersToString.split('').map(Number);
+    let numberReduce = numbersSumArray.reduce((total, numero) => total + numero, 0);
+
+    let numberTotal = numberReduce;
+
+        if (numberTotal.length >= 2) {
+
+            console.log(numberTotal, "caiu no if");
+            miniNumber(numberTotal);
+    
+        } else {
+            console.log(numberTotal, "caiu no else");
+            return numberTotal;
+        }
+    
+     }
+
+
+
 
