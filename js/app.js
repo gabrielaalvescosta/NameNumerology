@@ -4,6 +4,8 @@ const result = document.getElementById("result");
 const vogalsResult = document.getElementById("vogals");
 const consResult = document.getElementById("cons");
 
+// first number all letters, second number all vogals, third number all consoants
+let arrayNumerology = [];
 
 // objeto conversao de letras para numeros
 const lettersToNumbers = {
@@ -93,6 +95,8 @@ const miniNumber = (num) => {
 
             console.log(numberTotal, "caiu no else");
             result.innerHTML = numberTotal;
+            arrayNumerology.push(numberTotal);
+            console.log(arrayNumerology, "numeros finais")
 
         } else {
             return "not a number"
@@ -104,6 +108,7 @@ const miniNumber = (num) => {
 const separateVogals = (arrayLetters) => {
 
     let arrayVogals = [];
+    let arrayConsoants = [];
    
     for (let k = 0; k < arrayLetters.length; k++) {
 
@@ -117,11 +122,16 @@ const separateVogals = (arrayLetters) => {
             arrayVogals.push(arrayLetters[k]);
         } else if (arrayLetters[k] == "u") {
             arrayVogals.push(arrayLetters[k]);
+        } else {
+            arrayConsoants.push(arrayLetters[k]);
+            arrayConsoants.sort((a, b) => a - b);
         }
     }
 
     console.log(arrayVogals, "AQUI array final de vogais");
-    vogalsResult.innerHTML = arrayVogals;
+    console.log(arrayConsoants, "AQUI array final de consoantes");
+    
+    nameToNumber(arrayVogals);
+    nameToNumber(arrayConsoants);
    
 }
-
