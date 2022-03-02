@@ -31,6 +31,7 @@ buttonCalculate.onclick = (e) => {
     if (arrayNumerology.length === 3) {
 
         showAllNumbers(arrayNumerology);
+        showInfo(arrayNumerology);
 
     }
 
@@ -44,6 +45,7 @@ buttonClean.onclick = (e) => {
     for (child of result.children){
         child.remove();
     }
+
     arrayNumerology = [];
     console.log(arrayNumerology, "apos o botao clean")
     modal.style.display = "none";
@@ -173,8 +175,28 @@ const showAllNumbers = (arrayNumerology) => {
         createList.appendChild(document.createTextNode(arrayNumerology[g]));
         result.appendChild(createList);
         console.log("caiu no showAllNumbers");
-
+        
     }
+
 
 }
 
+const showInfo = (array) => {
+
+   // para cada item do array, comparar com o objeto numerologyData
+
+   let responseNumbers = array.map( num => {
+
+    if (num in numerologyData) {
+
+        return numerologyData[num];
+
+    }
+
+});
+
+    console.log(responseNumbers, "resposta")
+    return responseNumbers;
+    
+
+}
