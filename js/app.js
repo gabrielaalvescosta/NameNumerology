@@ -1,6 +1,9 @@
 // global variables
-const buttonCalculate = document.getElementById("button");
+const buttonCalculate = document.getElementById("calculate");
+const buttonClean = document.getElementById("clean");
+const modal = document.getElementById("modal");
 const result = document.getElementById("result");
+
 
 // first number all letters, second number all vogals, third number all consoants
 let arrayNumerology = [];
@@ -24,7 +27,26 @@ buttonCalculate.onclick = (e) => {
     e.preventDefault();
     separateName();
 
+    if (arrayNumerology.length === 3) {
+
+        showAllNumbers(arrayNumerology);
+
+    }
+
+    buttonCalculate.style.display = "none";
+    buttonClean.style.display = "block";
+
 }
+
+buttonClean.onclick = (e) => {
+
+    arrayNumerology = [];
+    buttonCalculate.style.display = "block";
+    buttonClean.style.display = "none";
+    
+
+}
+
 
 // separa o nome em um array de letras 
 const separateName = () => {
@@ -75,7 +97,7 @@ const sumNumber = (array) => {
 }
 
 // transforma number em array e soma os os números até que tenha apenas 1 número inteiro
-const miniNumber = (num) => {
+async function miniNumber(num) {
 
     let numbersToString = num.toString();
     let numbersSumArray = numbersToString.split('').map(Number);
@@ -93,11 +115,12 @@ const miniNumber = (num) => {
 
             console.log(numberTotal, "caiu no else");
             arrayNumerology.push(numberTotal);
-            console.log(arrayNumerology, "numeros finais");
+            console.log(arrayNumerology, "numeros finais"); 
 
         } else {
             return "not a number"
         }
+
 }
 
 
@@ -136,14 +159,17 @@ const separateVogals = (arrayLetters) => {
 
 const showAllNumbers = (arrayNumerology) => {
 
+    let createList;
 
-    console.log(arrayNumerology, "aqui o array FINAL")
-    
-    arrayNumerology.forEach((item) => {
-        
-        let list = document.createElement("li");
-        result.innerText = item;
-        list.appendChild(li);
+    for (let g = 0; g < arrayNumerology.length; g++) {
 
-    });
+        createList = document.createElement("div");
+        createList.classList.add('numerologyNumbers');
+        createList.appendChild(document.createTextNode(arrayNumerology[g]));
+        result.appendChild(createList)
+        console.log("caiu no showAllNumbers")
+
+    }
+
 }
+

@@ -16,16 +16,19 @@
         <h2>Find out your power number</h2>
         <p>The practices and principles of numerology have been traced back to at least 500 BC. This is when the great Greek mathematician and philosopher Pythagoras began a theory on numbers when he discovered that there was a direct relationship between numbers and music notes. Write your complete name and click on the button to see your power number. 
         </p>
-        <form method="get">
-       
-     
-        <input id="name" class="input" type="text" placeholder="Write your full name..."/>
-        <input type="date" class="input" id="date"/>
-        <button id="button" type="submit">Calculate</button>
-      
+        <form method="get">     
+        <input id="name" class="window__name" type="text" placeholder="Your name"/>
+        
+        <div class="window__buttons">
+        <button id="calculate" type="submit" class="window__button">Calculate</button>
+        <button id="clean" type="submit" class="window__button__clean">Clean</button>
+        </div>
         </form>
+        <div class="window__numbers__modal">
+        <h2>Your numbers are</h2>
         <div class="numbers" id="result">
-  
+
+        </div>
         </div>
     </div>
     <footer>
