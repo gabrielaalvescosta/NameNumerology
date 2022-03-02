@@ -1,8 +1,6 @@
 // global variables
 const buttonCalculate = document.getElementById("button");
 const result = document.getElementById("result");
-const vogalsResult = document.getElementById("vogals");
-const consResult = document.getElementById("cons");
 
 // first number all letters, second number all vogals, third number all consoants
 let arrayNumerology = [];
@@ -94,9 +92,8 @@ const miniNumber = (num) => {
         } else if (numberTotal.length == 1) {
 
             console.log(numberTotal, "caiu no else");
-            result.innerHTML = numberTotal;
             arrayNumerology.push(numberTotal);
-            console.log(arrayNumerology, "numeros finais")
+            console.log(arrayNumerology, "numeros finais");
 
         } else {
             return "not a number"
@@ -134,4 +131,19 @@ const separateVogals = (arrayLetters) => {
     nameToNumber(arrayVogals);
     nameToNumber(arrayConsoants);
    
+}
+
+
+const showAllNumbers = (arrayNumerology) => {
+
+
+    console.log(arrayNumerology, "aqui o array FINAL")
+    
+    arrayNumerology.forEach((item) => {
+        
+        let list = document.createElement("li");
+        result.innerText = item;
+        list.appendChild(li);
+
+    });
 }

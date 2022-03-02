@@ -10,21 +10,24 @@
     <title>Name Numerology Calculator</title>
 </head>
 <body>
-    <header>
+
+    <div class="window">
         <h1>Name Numerology Calculator</h1>
         <h2>Find out your power number</h2>
         <p>The practices and principles of numerology have been traced back to at least 500 BC. This is when the great Greek mathematician and philosopher Pythagoras began a theory on numbers when he discovered that there was a direct relationship between numbers and music notes. Write your complete name and click on the button to see your power number. 
         </p>
-    </header>
-    <main>
         <form method="get">
+       
+     
         <input id="name" class="input" type="text" placeholder="Write your full name..."/>
+        <input type="date" class="input" id="date"/>
         <button id="button" type="submit">Calculate</button>
+      
         </form>
-        <div id="result"></div>
-        <div id="vogals"></div>
-        <div id="cons"></div>
-    </main>
+        <div class="numbers" id="result">
+  
+        </div>
+    </div>
     <footer>
         <div class="credits">Made with ♥ by Gabriela Costa - All rights reserved.</div>
     </footer>
