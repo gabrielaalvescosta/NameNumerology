@@ -3,6 +3,7 @@ const buttonCalculate = document.getElementById("calculate");
 const buttonClean = document.getElementById("clean");
 const modal = document.getElementById("modal");
 const result = document.getElementById("result");
+const inputName = document.getElementById("name");
 
 
 // first number all letters, second number all vogals, third number all consoants
@@ -33,18 +34,22 @@ buttonCalculate.onclick = (e) => {
 
     }
 
-    buttonCalculate.style.display = "none";
-    buttonClean.style.display = "block";
+    modal.style.display = "block";
+    modal.style.opacity = "1";
 
 }
 
 buttonClean.onclick = (e) => {
 
+    for (child of result.children){
+        child.remove();
+    }
     arrayNumerology = [];
-    buttonCalculate.style.display = "block";
-    buttonClean.style.display = "none";
+    console.log(arrayNumerology, "apos o botao clean")
+    modal.style.display = "none";
+    modal.style.opacity = "0";
+    result.innerText = "";
     
-
 }
 
 
@@ -166,8 +171,8 @@ const showAllNumbers = (arrayNumerology) => {
         createList = document.createElement("div");
         createList.classList.add('numerologyNumbers');
         createList.appendChild(document.createTextNode(arrayNumerology[g]));
-        result.appendChild(createList)
-        console.log("caiu no showAllNumbers")
+        result.appendChild(createList);
+        console.log("caiu no showAllNumbers");
 
     }
 
