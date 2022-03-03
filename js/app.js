@@ -52,6 +52,7 @@ buttonClean.onclick = (e) => {
     modal.style.display = "none";
     modal.style.opacity = "0";
     result.innerText = "";
+    const [destiny, soul, personality] = [];
     
 }
 
@@ -203,17 +204,19 @@ const getInfo = (array) => {
 
 const printResult = (array) => {
 
+    const [destiny, soul, personality] = array;
+ 
     // destiny number result
-    let destinyTitle = document.getElementById("destinyNumber").appendChild(document.createTextNode(array[0].id));
-    let destinyText = document.getElementById("destinyText").appendChild(document.createTextNode(array[0].meaning));
+    let destinyTitle = document.getElementById("destinyNumber").appendChild(document.createTextNode(destiny.id));
+    let destinyText = document.getElementById("destinyText").appendChild(document.createTextNode(destiny.meaning));
 
     // soul number result
-    let soulTitle = document.getElementById("soulNumber").appendChild(document.createTextNode(array[1].id));
-    let soulText = document.getElementById("soulText").appendChild(document.createTextNode(array[1].meaning));
+    let soulTitle = document.getElementById("soulNumber").appendChild(document.createTextNode(soul.id));
+    let soulText = document.getElementById("soulText").appendChild(document.createTextNode(soul.meaning));
 
     // personality number result
-    let personalityTitle = document.getElementById("personalityNumber").appendChild(document.createTextNode(array[2].id));
-    let personalityText = document.getElementById("personalityText").appendChild(document.createTextNode(array[2].meaning));
+    let personalityTitle = document.getElementById("personalityNumber").appendChild(document.createTextNode(personality.id));
+    let personalityText = document.getElementById("personalityText").appendChild(document.createTextNode(personality.meaning));
 
 }
        
