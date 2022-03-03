@@ -38,6 +38,7 @@ buttonCalculate.onclick = (e) => {
         
 
     } else {
+        
         errorDiv.innerText = "Please, write your name";
         cleanAll();
     }

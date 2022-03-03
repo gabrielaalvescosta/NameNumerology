@@ -29,7 +29,7 @@ buttonCalculate.onclick = (e) => {
     e.preventDefault();
     separateName();
 
-    if (inputName != "" && arrayNumerology.length === 3) {
+    if (inputName.value !== "" && arrayNumerology.length === 3) {
 
         showAllNumbers(arrayNumerology);
         getInfo(arrayNumerology);
