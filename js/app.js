@@ -10,7 +10,7 @@ const errorDiv = document.getElementById("error");
 // first number all letters, second number all vogals, third number all consoants
 let arrayNumerology = [];
 
-// objeto conversao de letras para numeros
+// convert numbers to letters
 const lettersToNumbers = {
     a: 1, á: 1, ã: 1, â: 1, j: 1, s: 1,
     b: 2, k: 2, t: 2,
@@ -23,7 +23,7 @@ const lettersToNumbers = {
     i: 9, í: 9, r: 9
 };
 
-// ao clicar no botão, chama a funcao que transforma o nome em array 
+// start separate name function and open modal
 buttonCalculate.onclick = (e) => {
 
     e.preventDefault();
@@ -44,6 +44,8 @@ buttonCalculate.onclick = (e) => {
 
 }
 
+
+// clean input and modal
 buttonClean.onclick = (e) => {
 
     for (child of result.children){
@@ -51,7 +53,6 @@ buttonClean.onclick = (e) => {
     }
 
     arrayNumerology = [];
-
     modal.style.opacity = "0";
     modal.style.display = "none";
     result.innerText = "";
@@ -60,7 +61,7 @@ buttonClean.onclick = (e) => {
 }
 
 
-// separa o nome em um array de letras 
+// array of letters
 const separateName = () => {
 
     let completeName = document.getElementById("name").value.toLowerCase();
@@ -71,7 +72,7 @@ const separateName = () => {
 
 }
 
-// transforma o nome em sequencia de numeros
+// transform letter to number
 const nameToNumber = (letters) => {
  
     let allNumbersResultArray = letters.map( n => {
@@ -92,7 +93,7 @@ const nameToNumber = (letters) => {
 }
 
 
-// calcula o numero da alma (soma todos os números do array)
+// sum all array numbers
 const sumNumber = (array) => {
 
     let almaNumberCont = 0;
@@ -107,7 +108,7 @@ const sumNumber = (array) => {
 
 }
 
-// transforma number em array e soma os os números até que tenha apenas 1 número inteiro
+// add all the numbers until the result is one number
 async function miniNumber(num) {
 
     let numbersToString = num.toString();
@@ -131,7 +132,7 @@ async function miniNumber(num) {
 }
 
 
-
+// separate vogals of consoants
 const separateVogals = (arrayLetters) => {
 
     let arrayVogals = [];
@@ -161,6 +162,7 @@ const separateVogals = (arrayLetters) => {
 }
 
 
+// show the numbers in modal
 const showAllNumbers = (arrayNumerology) => {
 
     let createList;
@@ -177,9 +179,10 @@ const showAllNumbers = (arrayNumerology) => {
 
 }
 
+
+// get numerologyData info 
 const getInfo = (array) => {
 
-    // para cada item do array, comparar com o objeto numerologyData
     let arrayResponse = [];
 
     let responseNumbers = array.map( num => {
@@ -195,29 +198,31 @@ const getInfo = (array) => {
     
 }
 
-
+// show results in modal
 const printResult = (arrayNumerology) => {
 
     const [destiny, soul, personality] = arrayNumerology;
 
     if (arrayNumerology.length == 3){
-    // destiny number result
-    let destinyTitle = document.getElementById("destinyNumber");
-    destinyTitle.innerText = destiny.id;
 
-    let destinyText = document.getElementById("destinyText");
-    destinyText.innerText = destiny.meaning;
+        // destiny number result
+        let destinyTitle = document.getElementById("destinyNumber");
+        destinyTitle.innerText = destiny.id;
 
-    // soul number result
-    let soulTitle = document.getElementById("soulNumber")
-    soulTitle.innerText = soul.id;
-    let soulText = document.getElementById("soulText")
-    soulText.innerText = soul.meaning;
+        let destinyText = document.getElementById("destinyText");
+        destinyText.innerText = destiny.meaning;
 
-    // personality number result
-    let personalityTitle = document.getElementById("personalityNumber");
-    personalityTitle.innerText = personality.id;
-    let personalityText = document.getElementById("personalityText");
-    personalityText.innerText = personality.meaning;
+        // soul number result
+        let soulTitle = document.getElementById("soulNumber")
+        soulTitle.innerText = soul.id;
+        let soulText = document.getElementById("soulText")
+        soulText.innerText = soul.meaning;
+
+        // personality number result
+        let personalityTitle = document.getElementById("personalityNumber");
+        personalityTitle.innerText = personality.id;
+        let personalityText = document.getElementById("personalityText");
+        personalityText.innerText = personality.meaning;
+
     } 
 }
