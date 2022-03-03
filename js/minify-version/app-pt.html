@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-pt-br.css"/>
+    <script type="text/javascript" src="app-pt-br.js" defer></script>
+    <script type="text/javascript" src="data-pt-br.js" defer></script>
+    <title>Calculadora de Numerologia do Nome</title>
+</head>
+<body>
+
+    <div class="window">
+        <h1>Calculadora de Numerologia do Nome</h1>
+        <h2>Descubra seus 3 números de poder</h2>
+        <p>Essa calculadora irá te ajudar a descobrir os seus 3 números de poder: número de destino ou expressão, número de impressão ou aparência e o número de motivação ou ambição. Lembre-se de escrever o seu nome completo para que a calculadora possa achar os 3 números.</p>
+
+        <form method="get">     
+        <div id="error"></div>
+        <input id="name" class="window__name" type="text" placeholder="Your name" required/>
+        <button id="calculate" type="submit" class="window__button">Calculate</button>
+        </form>
+
+        <div class="window__modal__background" id="modal">
+        <div class="window__modal__area">
+        <h2>Seus números são</h2>
+        <div class="numbers" id="result">
+        </div>
+
+        <!--------- RESPONSES -->
+        <div class="window__response" id="response">
+    
+
+        <h3>Seu número de destino ou expressão é: <span id="destinyNumber"></span></h3>
+        <p id="destinyText"></p>
+
+        <h3>Seu número de alma ou motivação é: <span id="soulNumber"></span></h3>
+        <p id="soulText"></p>
+
+        <h3>Seu número de aparência ou expressão é: <span id="personalityNumber"></span></h3>
+        <p id="personalityText"></p>
+
+        </div>
+        <!---- end responses -->
+
+        <button id="clean" type="reset" class="window__button__clean">Clean</button>
+        </div>
+    
+        </div>
+    </div>
+
+</body>
+</html>

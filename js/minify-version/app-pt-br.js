@@ -11,7 +11,7 @@ const errorDiv = document.getElementById("error");
 let arrayNumerology = [];
 
 // convert numbers to letters
-const lettersToNumbers = {
+const letraNumeros = {
     a: 1, á: 1, ã: 1, â: 1, j: 1, s: 1,
     b: 2, k: 2, t: 2,
     c: 3, l: 3, u: 3, ú: 3,
@@ -38,8 +38,9 @@ buttonCalculate.onclick = (e) => {
         
 
     } else {
-        errorDiv.innerText = "Please, write your name";
-        cleanAll();
+        
+        zeraDados();
+        errorDiv.innerHTML = "Please, write your name";
     }
 
 }
@@ -52,19 +53,16 @@ buttonClean.onclick = (e) => {
         child.remove();
     }
 
-    cleanAll();
+    zeraDados();
     
 }
 
-
-const cleanAll = () => {
-
+const zeraDados = () => {
     arrayNumerology = [];
     modal.style.opacity = "0";
     modal.style.display = "none";
-    result.innerText = "";
+    result.innerHTML = "";
     inputName.value = "";
-
 }
 
 
@@ -84,9 +82,9 @@ const nameToNumber = (letters) => {
  
     let allNumbersResultArray = letters.map( n => {
 
-        if (n in lettersToNumbers) {
+        if (n in letraNumeros) {
 
-            return lettersToNumbers[n];
+            return letraNumeros[n];
 
         }
 
@@ -187,16 +185,16 @@ const showAllNumbers = (arrayNumerology) => {
 }
 
 
-// get numerologyData info 
+// get numerologyPtData info 
 const getInfo = (array) => {
 
     let arrayResponse = [];
 
     let responseNumbers = array.map( num => {
 
-        if (num in numerologyData) {
+        if (num in numerologyPtData) {
 
-            arrayResponse.push(numerologyData[num]);
+            arrayResponse.push(numerologyPtData[num]);
                     
         }
     });
@@ -214,22 +212,22 @@ const printResult = (arrayNumerology) => {
 
         // destiny number result
         let destinyTitle = document.getElementById("destinyNumber");
-        destinyTitle.innerText = destiny.id;
+        destinyTitle.innerHTML = destiny.id;
 
         let destinyText = document.getElementById("destinyText");
-        destinyText.innerText = destiny.meaning;
+        destinyText.innerHTML = destiny.url;
 
         // soul number result
         let soulTitle = document.getElementById("soulNumber")
-        soulTitle.innerText = soul.id;
+        soulTitle.innerHTML = soul.id;
         let soulText = document.getElementById("soulText")
-        soulText.innerText = soul.meaning;
+        soulText.innerHTML = soul.url;
 
         // personality number result
         let personalityTitle = document.getElementById("personalityNumber");
-        personalityTitle.innerText = personality.id;
+        personalityTitle.innerHTML = personality.id;
         let personalityText = document.getElementById("personalityText");
-        personalityText.innerText = personality.meaning;
+        personalityText.innerHTML = personality.url;
 
     } 
 }
