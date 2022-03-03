@@ -162,6 +162,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadein 1s;
 }
 
 .window__modal__background {
@@ -204,6 +205,8 @@ input {
     margin: 1em;
     box-shadow: inset 1px 2px 10px 4px #9363ff;
     border-radius: 50%;
+    animation-duration: 2s;
+    animation-name: fadein;
 
 }
 
@@ -217,15 +220,24 @@ input {
     margin: 1em;
 }
 
-.hide {
-    opacity: 0;
-    display: none;
-    transition: opacity 1.5s;
-}
-
-
-.show {
-    opacity: 1;
+#modal {
+    animation-duration: 2s;
+    animation-name: fadein;
+  }
+  
+  #modal.active {
+    animation-duration: 2s;
+    animation-name: fadeout;
+  }
+  
+  @keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeout {
+    from {opacity: 1}
+    to {opacity: 0}
   }
   
 

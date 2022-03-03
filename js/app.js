@@ -33,16 +33,14 @@ buttonCalculate.onclick = (e) => {
 
         showAllNumbers(arrayNumerology);
         getInfo(arrayNumerology);
+        modal.style.display = "block";
+        modal.style.opacity = "1";
         
 
     } else {
         errorDiv.innerText = "Please, write your name";
-        modal.style.display = "none";
+        inputName.value = "";
     }
-
-
-    modal.style.display = "block";
-    modal.style.opacity = "1";
 
 }
 
@@ -54,8 +52,8 @@ buttonClean.onclick = (e) => {
 
     arrayNumerology = [];
 
-    modal.style.display = "none";
     modal.style.opacity = "0";
+    modal.style.display = "none";
     result.innerText = "";
     inputName.value = "";
     
@@ -201,7 +199,6 @@ const getInfo = (array) => {
 const printResult = (arrayNumerology) => {
 
     const [destiny, soul, personality] = arrayNumerology;
-    console.log(destiny.id, "aquiiiiiiiiiiiii")
 
     if (arrayNumerology.length == 3){
     // destiny number result
