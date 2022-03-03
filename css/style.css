@@ -150,6 +150,7 @@ input {
     font-family: 'Josefin Sans';
     background: #4f35c2;
     box-shadow: none;
+    cursor: pointer;
     border: none;
     margin: 1em 0.25em;
     border-radius: 0.85em;
@@ -213,7 +214,7 @@ input {
     text-align: left;
     padding: 1em 0;
     border-bottom: 3px solid #4e33b7;
-    margin: 0 0 1em 0;
+    margin: 1em;
 }
 
 .hide {

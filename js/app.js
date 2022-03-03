@@ -5,7 +5,7 @@ const modal = document.getElementById("modal");
 const result = document.getElementById("result");
 const response = document.getElementById("response");
 const inputName = document.getElementById("name");
-
+const errorDiv = document.getElementById("error");
 
 // first number all letters, second number all vogals, third number all consoants
 let arrayNumerology = [];
@@ -29,12 +29,17 @@ buttonCalculate.onclick = (e) => {
     e.preventDefault();
     separateName();
 
-    if (arrayNumerology.length === 3) {
+    if (inputName != "" && arrayNumerology.length === 3) {
 
         showAllNumbers(arrayNumerology);
         getInfo(arrayNumerology);
+        
 
+    } else {
+        errorDiv.innerText = "Please, write your name";
+        modal.style.display = "none";
     }
+
 
     modal.style.display = "block";
     modal.style.opacity = "1";
@@ -48,11 +53,11 @@ buttonClean.onclick = (e) => {
     }
 
     arrayNumerology = [];
-    console.log(arrayNumerology, "apos o botao clean")
+
     modal.style.display = "none";
     modal.style.opacity = "0";
     result.innerText = "";
-    const [destiny, soul, personality] = [];
+    inputName.value = "";
     
 }
 
@@ -83,7 +88,7 @@ const nameToNumber = (letters) => {
     // join('') remove os espaços vazios
 
     let num = allNumbersResultArray.split('').map(Number);
-    console.log(num, "array de numeros")
+
     sumNumber(num);
     
 }
@@ -99,8 +104,7 @@ const sumNumber = (array) => {
         almaNumberCont += array[i];
 
     }
-    
-    console.log(almaNumberCont, "primeira soma")
+
     miniNumber(almaNumberCont);
 
 }
@@ -113,18 +117,14 @@ async function miniNumber(num) {
     let numberReduce = numbersSumArray.reduce((total, numero) => total + numero, 0);
 
     let numberTotal = numberReduce.toString();
-    console.log(numberTotal.length, "comprimento do numero antes do if");
 
         if (numberTotal.length >= 2) {
 
-            console.log(numberTotal, "caiu no if");
             numberTotal = miniNumber(numberTotal);
     
         } else if (numberTotal.length == 1) {
 
-            console.log(numberTotal, "caiu no else");
             arrayNumerology.push(numberTotal);
-            console.log(arrayNumerology, "numeros finais"); 
 
         } else {
             return "not a number"
@@ -156,9 +156,6 @@ const separateVogals = (arrayLetters) => {
             arrayConsoants.sort((a, b) => a - b);
         }
     }
-
-    console.log(arrayVogals, "AQUI array final de vogais");
-    console.log(arrayConsoants, "AQUI array final de consoantes");
     
     nameToNumber(arrayVogals);
     nameToNumber(arrayConsoants);
@@ -176,7 +173,6 @@ const showAllNumbers = (arrayNumerology) => {
         createList.classList.add('numerologyNumbers');
         createList.appendChild(document.createTextNode(arrayNumerology[g]));
         result.appendChild(createList);
-        console.log("caiu no showAllNumbers");
         
     }
 
@@ -198,25 +194,33 @@ const getInfo = (array) => {
     });
     
     printResult(arrayResponse);
-    console.log(arrayResponse, "tem que ser um array de objeto")
+    
 }
 
 
-const printResult = (array) => {
+const printResult = (arrayNumerology) => {
 
-    const [destiny, soul, personality] = array;
- 
+    const [destiny, soul, personality] = arrayNumerology;
+    console.log(destiny.id, "aquiiiiiiiiiiiii")
+
+    if (arrayNumerology.length == 3){
     // destiny number result
-    let destinyTitle = document.getElementById("destinyNumber").appendChild(document.createTextNode(destiny.id));
-    let destinyText = document.getElementById("destinyText").appendChild(document.createTextNode(destiny.meaning));
+    let destinyTitle = document.getElementById("destinyNumber");
+    destinyTitle.innerText = destiny.id;
+
+    let destinyText = document.getElementById("destinyText");
+    destinyText.innerText = destiny.meaning;
 
     // soul number result
-    let soulTitle = document.getElementById("soulNumber").appendChild(document.createTextNode(soul.id));
-    let soulText = document.getElementById("soulText").appendChild(document.createTextNode(soul.meaning));
+    let soulTitle = document.getElementById("soulNumber")
+    soulTitle.innerText = soul.id;
+    let soulText = document.getElementById("soulText")
+    soulText.innerText = soul.meaning;
 
     // personality number result
-    let personalityTitle = document.getElementById("personalityNumber").appendChild(document.createTextNode(personality.id));
-    let personalityText = document.getElementById("personalityText").appendChild(document.createTextNode(personality.meaning));
-
+    let personalityTitle = document.getElementById("personalityNumber");
+    personalityTitle.innerText = personality.id;
+    let personalityText = document.getElementById("personalityText");
+    personalityText.innerText = personality.meaning;
+    } 
 }
-       

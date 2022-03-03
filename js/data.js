@@ -16,7 +16,7 @@ const numerologyData = {
         id: '3',
         numberTitle: 'The Creator',
         keywords: 'Divine Spark Within, Creative, Social, Bringer of Change',
-        meaning: 'Within numerology, the 2 vibration assumes the role of the mediator, creating harmony by bringing together dissonant forces through compassion, empathy, and kindness. 2 is linked to psychic abilities and intuition, and if this number appears as a Life Path or Destiny Number, the individual will be astute to subtle energy shifts and emotional nuances. Because 2 is so sensitive, it is very conflict-averse, and can end up feeling under-appreciated or unacknowledged. 2 must avoid seeking external validation and, instead, realize that perfect equilibrium needed already exists within.'
+        meaning: 'The number 3 has always held powerful symbolism. Think about good things coming in 3s, the birth-life-death cycle, the mind-body-soul connection, the 3 acts of a typical story. Wherever the number 3 shows up in your life, it\'s generally an omen of creativity, communication, optimism, and curiosity!'
       },
     4: {
         id: '4',
