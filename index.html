@@ -16,7 +16,7 @@
         <h2>Find out your power number</h2>
         <p>The practices and principles of numerology have been traced back to at least 500 BC. This is when the great Greek mathematician and philosopher Pythagoras began a theory on numbers when he discovered that there was a direct relationship between numbers and music notes. Write your complete name and click on the button to see your power number. 
         </p>
-        
+
         <form method="get">     
         <input id="name" class="window__name" type="text" placeholder="Your name"/>
         <button id="calculate" type="submit" class="window__button">Calculate</button>
@@ -26,8 +26,24 @@
         <div class="window__modal__area">
         <h2>Your power numbers are</h2>
         <div class="numbers" id="result">
+        </div>
+
+        <!--------- RESPONSES -->
+        <div class="window__response" id="response">
+    
+
+        <h3>Your destiny number is: <span id="destinyNumber"></span></h3>
+        <p id="destinyText"></p>
+
+        <h3>Your soul number is: <span id="soulNumber"></span></h3>
+        <p id="soulText"></p>
+
+        <h3>Your personality number is: <span id="personalityNumber"></span></h3>
+        <p id="personalityText"></p>
 
         </div>
+        <!---- end responses -->
+
         <button id="clean" type="submit" class="window__button__clean">Clean</button>
         </div>
         </div>

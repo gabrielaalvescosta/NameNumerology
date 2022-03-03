@@ -3,6 +3,7 @@ const buttonCalculate = document.getElementById("calculate");
 const buttonClean = document.getElementById("clean");
 const modal = document.getElementById("modal");
 const result = document.getElementById("result");
+const response = document.getElementById("response");
 const inputName = document.getElementById("name");
 
 
@@ -31,7 +32,7 @@ buttonCalculate.onclick = (e) => {
     if (arrayNumerology.length === 3) {
 
         showAllNumbers(arrayNumerology);
-        showInfo(arrayNumerology);
+        getInfo(arrayNumerology);
 
     }
 
@@ -181,22 +182,38 @@ const showAllNumbers = (arrayNumerology) => {
 
 }
 
-const showInfo = (array) => {
+const getInfo = (array) => {
 
-   // para cada item do array, comparar com o objeto numerologyData
+    // para cada item do array, comparar com o objeto numerologyData
+    let arrayResponse = [];
 
-   let responseNumbers = array.map( num => {
+    let responseNumbers = array.map( num => {
 
-    if (num in numerologyData) {
+        if (num in numerologyData) {
 
-        return numerologyData[num];
-
-    }
-
-});
-
-    console.log(responseNumbers, "resposta")
-    return responseNumbers;
+            arrayResponse.push(numerologyData[num]);
+                    
+        }
+    });
     
+    printResult(arrayResponse);
+    console.log(arrayResponse, "tem que ser um array de objeto")
+}
+
+
+const printResult = (array) => {
+
+    // destiny number result
+    let destinyTitle = document.getElementById("destinyNumber").appendChild(document.createTextNode(array[0].id));
+    let destinyText = document.getElementById("destinyText").appendChild(document.createTextNode(array[0].meaning));
+
+    // soul number result
+    let soulTitle = document.getElementById("soulNumber").appendChild(document.createTextNode(array[1].id));
+    let soulText = document.getElementById("soulText").appendChild(document.createTextNode(array[1].meaning));
+
+    // personality number result
+    let personalityTitle = document.getElementById("personalityNumber").appendChild(document.createTextNode(array[2].id));
+    let personalityText = document.getElementById("personalityText").appendChild(document.createTextNode(array[2].meaning));
 
 }
+       
